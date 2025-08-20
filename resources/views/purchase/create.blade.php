@@ -36,8 +36,8 @@
                             </div>
                             <div class="col-12 col-md-3">
                                 <div class="form-group mt-2">
-                                    <label for="loot">Loot No.</label>
-                                    <input type="text" name="loot" id="loot" value="{{ old('loot') }}" class="form-control">
+                                    <label for="engine">Engine No.</label>
+                                    <input type="text" name="engine" id="engine" value="{{ old('engine') }}" class="form-control">
                                 </div>
                             </div>
                             <div class="col-12 col-md-3">
@@ -75,21 +75,6 @@
                             </div>
                             <div class="col-12 col-md-3">
                                 <div class="form-group mt-2">
-                                    <label for="recycle">Recycle</label>
-                                    <input type="number" name="recycle"oninput="updateChanges()" value="{{ old('recycle') ?? 0 }}" min="0" id="recycle" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <div class="form-group mt-2">
-                                    <label for="price">Auction Fee</label>
-                                    <div class="input-group mb-3">
-                                        <input type="number" name="afee" id="afee" oninput="updateChanges()" value="{{ old('afee') ?? 0 }}" class="form-control">
-                                        <input type="number" name="atax" id="atax" readonly value="{{ old('atax') ?? 0 }}" class="form-control input-group-text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <div class="form-group mt-2">
                                     <label for="transport_charges">Transport Charges</label>
                                     <input type="number" name="transport_charges" id="transport_charges" oninput="updateChanges()" value="{{ old('transport_charges') ?? 0 }}" class="form-control">
                                 </div>
@@ -99,29 +84,20 @@
                                     <label for="total">Total</label>
                                     <input type="number" name="total" value="{{ old('total') ?? 0 }}" readonly id="total" class="form-control">
                                 </div>
-                            </div>
+                            </div>                        
                             <div class="col-12 col-md-3">
                                 <div class="form-group mt-2">
-                                    <label for="transporter">Transporter</label>
-                                    <select name="transporter" id="transporter" required class="form-control">
-                                        <option value="">Select Transporter</option>
-                                        @foreach ($transporters as $transporter)
-                                            <option value="{{ $transporter->id }}" @selected(old('transporter') == $transporter->id)>{{ $transporter->title }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="conversion_rate">Conversion Rate</label>
+                                    <input type="number" name="conversion_rate" id="conversion_rate" min="0" oninput="convertToDirham()" step="any" value="{{ $rate }}" required class="form-control">
                                 </div>
                             </div>
                             <div class="col-12 col-md-3">
                                 <div class="form-group mt-2">
-                                    <label for="yard">Yard</label>
-                                    <select name="yard" id="yard" required class="form-control">
-                                        <option value="">Select Yard</option>
-                                        @foreach ($yards as $yard)
-                                            <option value="{{ $yard->name }}" @selected(old('yard') == $yard->name)>{{ $yard->name }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="net_dirham">Net Dirham</label>
+                                    <input type="number" name="net_dirham" id="net_dirham" readonly value="0" required class="form-control">
                                 </div>
-                            </div>
+                            </div>                     
+                                                 
                             <div class="col-12 col-md-3">
                                 <div class="form-group mt-2">
                                     <label for="ddate">Document Received Date</label>
@@ -182,19 +158,15 @@
         function updateChanges() {
             var price = parseFloat($('#price').val());
             var ptax = parseFloat($('#ptax').val());
-            var afee = parseFloat($('#afee').val());
-            var atax = parseFloat($('#atax').val());
             var transport_charges = parseFloat($('#transport_charges').val());
-            var recycle = parseFloat($('#recycle').val());
 
             var pTaxValue = price * 10 / 100;
-            var aTaxValue = afee * 10 / 100;
 
-            var amount = (price + pTaxValue + afee + aTaxValue + transport_charges + recycle);
+            var amount = (price + pTaxValue + transport_charges);
 
             $("#ptax").val(pTaxValue.toFixed(2));
-            $("#atax").val(aTaxValue.toFixed(2));
             $("#total").val(amount.toFixed(2));
+            convertToDirham();
 
         }
 
@@ -221,6 +193,13 @@
     });
 });
 
+
+function convertToDirham() {
+           var total = $('#total').val();
+           var conversion_rate = $('#conversion_rate').val();
+           var net_dirham = parseFloat(total) * parseFloat(conversion_rate);
+           $('#net_dirham').val(net_dirham.toFixed(0));
+       }
 
     </script>
 @endsection

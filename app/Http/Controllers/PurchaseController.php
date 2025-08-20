@@ -47,7 +47,10 @@ class PurchaseController extends Controller
 
         $transporters = accounts::where('type', 'Transporter')->get();
 
-        return view('purchase.create', compact('auctions', 'yards', 'lastpurchase', 'transporters'));
+        
+        $rate = purchase::latest()->first()->conversion_rate ?? 0;
+
+        return view('purchase.create', compact('auctions', 'yards', 'lastpurchase', 'transporters', 'rate'));
     }
 
     /**
@@ -69,22 +72,19 @@ class PurchaseController extends Controller
             $ref = getRef();
             $purchase = purchase::create(
                 [
-                    "transporter_id"        =>  $request->transporter,
                     "year"                  =>  $request->year,
                     "maker"                 =>  $request->maker,
                     "model"                 =>  $request->model,
                     "chassis"               =>  $request->chassis,
-                    "loot"                  =>  $request->loot,
-                    "yard"                  =>  $request->yard,
+                    "engine"                =>  $request->engine,
                     "date"                  =>  $request->date,
                     "auction"               =>  $request->auction,
                     "price"                 =>  $request->price,
                     "ptax"                  =>  $request->ptax,
-                    "afee"                  =>  $request->afee,
-                    "atax"                  =>  $request->atax,
                     "transport_charges"     =>  $request->transport_charges,
                     "total"                 =>  $request->total,
-                    "recycle"               =>  $request->recycle,
+                    "rate"                  =>  $request->conversion_rate,
+                    "net_dirham"            =>  $request->net_dirham,
                     "adate"                 =>  $request->adate,
                     "ddate"                 =>  $request->ddate,
                     "number_plate"          =>  $request->number_plate,

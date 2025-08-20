@@ -50,7 +50,8 @@
                             <th>Maker</th>
                             <th>Model</th>
                             <th>Chassis</th>
-                            <th>Total</th>
+                            <th>Yen</th>
+                            <th>Dirham</th>
                             <th>Status</th>
                             <th>Action</th>
                         </thead>
@@ -63,7 +64,8 @@
                                     <td>{{ $purchase->maker }}</td>
                                     <td>{{ $purchase->model }}</td>
                                     <td>{{ $purchase->chassis }}</td>
-                                    <td>{{ $purchase->total }}</td>
+                                    <td>{{ number_format($purchase->total) }}</td>
+                                    <td>{{ number_format($purchase->net_dirham) }}</td>
                                     <td><span class="badge {{$purchase->status == "Available" ? "bg-success" : "bg-danger"}}">{{$purchase->status}}</span></td>
                                     <td>
                                         <div class="dropdown">
@@ -101,7 +103,8 @@
                         </tbody>
                         <tbody>
                             <th colspan="6" class="text-end">Total</th>
-                            <th>{{$purchases->sum('total')}}</th>
+                            <th>{{number_format($purchases->sum('total'))}}</th>
+                            <th>{{number_format($purchases->sum('net_dirham'))}}</th>
                         </tbody>
                     </table>
                 </div>

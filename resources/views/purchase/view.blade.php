@@ -41,12 +41,8 @@
                                         <h5 class="fs-14 mb-0">{{$purchase->chassis}}</h5>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <p class="text-muted mb-2 text-uppercase fw-semibold">Loot No.</p>
-                                        <h5 class="fs-14 mb-0">{{$purchase->loot}}</h5>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <p class="text-muted mb-2 text-uppercase fw-semibold">Yard</p>
-                                        <h5 class="fs-14 mb-0">{{$purchase->yard}}</h5>
+                                        <p class="text-muted mb-2 text-uppercase fw-semibold">Engine No.</p>
+                                        <h5 class="fs-14 mb-0">{{$purchase->engine}}</h5>
                                     </div>
                                     <div class="col-lg-3 col-6">
                                         <p class="text-muted mb-2 text-uppercase fw-semibold">Purchase Date</p>
@@ -59,28 +55,22 @@
                                     <div class="col-lg-3 col-6">
                                         <p class="text-muted mb-2 text-uppercase fw-semibold">Price</p>
                                         <h5 class="fs-14 mb-0">{{number_format($purchase->price)}}</h5>
-                                        <h5 class="fs-14 mb-0">{{number_format($purchase->ptax)}}</h5>
                                     </div>
                                     <div class="col-lg-3 col-6">
                                         <p class="text-muted mb-2 text-uppercase fw-semibold">Tax</p>
-                                        <h5 class="fs-14 mb-0">{{number_format($purchase->afee)}}</h5>
-                                        <h5 class="fs-14 mb-0">{{number_format($purchase->atax)}}</h5>
+                                        <h5 class="fs-14 mb-0">{{number_format($purchase->ptax)}}</h5>
                                     </div>
                                     <div class="col-lg-3 col-6">
                                         <p class="text-muted mb-2 text-uppercase fw-semibold">Transport Charges</p>
                                         <h5 class="fs-14 mb-0">{{number_format($purchase->transport_charges)}}</h5>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <p class="text-muted mb-2 text-uppercase fw-semibold">Recycle</p>
-                                        <h5 class="fs-14 mb-0">{{number_format($purchase->recycle)}}</h5>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <p class="text-muted mb-2 text-uppercase fw-semibold">Total</p>
+                                        <p class="text-muted mb-2 text-uppercase fw-semibold">Total Yen</p>
                                         <h5 class="fs-14 mb-0">{{number_format($purchase->total)}}</h5>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <p class="text-muted mb-2 text-uppercase fw-semibold">Transporter</p>
-                                        <h5 class="fs-14 mb-0">{{$purchase->transporter->title}}</h5>
+                                        <p class="text-muted mb-2 text-uppercase fw-semibold">Total Dirham</p>
+                                        <h5 class="fs-14 mb-0">{{number_format($purchase->net_dirham)}}</h5>
                                     </div>
 
                                     <div class="col-lg-3 col-6">

@@ -160,14 +160,14 @@ function calculateGrowthPercentage($oldValue, $newValue) {
 
 function projectNameAuth()
 {
-    return "Jan Trading Company";
+    return "JAN BIKES";
 }
 
 function projectNameHeader()
 {
-    return "JAN TRADING COMPANY";
+    return "JAN BIKES";
 }
 function projectNameShort()
 {
-    return "JTC";
+    return "JB";
 }

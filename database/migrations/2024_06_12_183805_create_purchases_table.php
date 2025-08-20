@@ -13,22 +13,20 @@ return new class extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transporter_id')->constrained('accounts', 'id')->cascadeOnDelete();
             $table->string("year")->nullable();
             $table->string("maker")->nullable();
             $table->string("model")->nullable();
             $table->string("chassis")->unique();
-            $table->string("loot")->nullable();
+            $table->string("engine")->nullable();
             $table->string("yard")->nullable();
             $table->date('date')->nullable();
             $table->string("auction")->nullable();
-            $table->float("price")->nullable();
-            $table->float("ptax")->nullable();
-            $table->float("afee")->nullable();
-            $table->float("atax")->nullable();
-            $table->float("transport_charges")->nullable();
-            $table->float("total")->nullable();
-            $table->float("recycle")->nullable();
+            $table->double("price",15,2)->nullable();
+            $table->double("ptax")->nullable();
+            $table->double("transport_charges",15,2)->nullable();
+            $table->double("total",15,2)->nullable();
+            $table->double("rate",15,2)->default(0);
+            $table->double("net_dirham",15,2)->default(0);
             $table->date('adate')->nullable();
             $table->date('ddate')->nullable();
             $table->string("number_plate")->nullable();

@@ -81,7 +81,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+               {{--  <li class="nav-item">
                     <a class="nav-link menu-link" href="#export" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarApps">
                         <i class="ri-shopping-cart-line"></i><span data-key="t-apps">Export</span>
@@ -165,7 +165,6 @@
                         </ul>
                     </div>
                 </li>
-               
                 <li class="nav-item">
                             <a class="nav-link menu-link" href="#settings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
                                 <i class="ri-settings-2-line"></i> <span data-key="t-multi-level">Settings</span>
@@ -204,7 +203,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                </li> --}}
             </ul>
         </div>
         <!-- Sidebar -->
