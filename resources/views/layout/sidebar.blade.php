@@ -81,7 +81,7 @@
                         </ul>
                     </div>
                 </li>
-               {{--  <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#export" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarApps">
                         <i class="ri-shopping-cart-line"></i><span data-key="t-apps">Export</span>
@@ -98,8 +98,8 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+               {{--  <li class="nav-item">
                     <a class="nav-link menu-link" href="#finance" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarApps">
                         <i class="ri-wallet-2-line"></i><span data-key="t-apps">Finance</span>
@@ -121,8 +121,8 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#reports" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarApps">
                         <i class="ri-file-list-line"></i><span data-key="t-apps">Reports</span>
@@ -141,8 +141,8 @@
                             
                         </ul>
                     </div>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+               {{--  <li class="nav-item">
                     <a class="nav-link menu-link" href="#stock" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="stock">
                         <i class="ri-car-line"></i><span data-key="t-apps">Stock</span>
@@ -164,23 +164,23 @@
                             
                         </ul>
                     </div>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                             <a class="nav-link menu-link" href="#settings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
                                 <i class="ri-settings-2-line"></i> <span data-key="t-multi-level">Settings</span>
                             </a>
                             <div class="collapse menu-dropdown" id="settings">
                                 <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="{{ route('yards.index') }}" class="nav-link" data-key="t-level-1.1"> Yards </a>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a href="{{ route('auctions.index') }}" class="nav-link" data-key="t-level-1.1"> Auctions </a>
                                     </li>
-                                    <li class="nav-item">
+                                   {{--  <li class="nav-item">
                                         <a href="{{ route('parts.index') }}" class="nav-link" data-key="t-level-1.1"> Parts </a>
-                                    </li>
-                                    <li class="nav-item">
+                                    </li> --}}
+                                   {{--  <li class="nav-item">
                                         <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAccount" data-key="t-level-1.2"> 
                                             Accounts
                                         </a>
@@ -200,10 +200,10 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
-                </li> --}}
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
